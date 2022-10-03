@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pre {
+            background-color: red;
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+            width: 80%;
+            text-align: left;
+            div img {
+                max-width: 100%;
+            }
+    </style>
+</head>
+<body>
+    <!-- h-->
+    <h1>Basic and combinators Selectors</h1>
+    <section alt="Basic">
+        <h2>Basic Selectors</h2>
+        <div alt="type">
+            <h3><li>Type</li></h3>
+            <pre class="pre"><code>div{...}</code></pre>
+            <p>Expample</p>
+                <pre class="pre"><code>
+                    div{
+                        background: pink;
+                    }</code></pre>
+                <p>Html Code to Steling</p>
+                <pre class="pre"><code>&lt;div class=&quot;title&quot;&gt;Hola&lt;/div&gt;</code></pre>
+                <!--
+                <p>Full HTML Code</p>
+                <pre class="pre"><code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;style&gt;
+                        div{
+                          background: pink;
+                        }
+                    &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                       &lt;div class=&quot;title&quot;&gt;Hola&lt;/div&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;</code></pre>
+                    <p>Result</p>
+                    <div><img src="\\wsl.localhost\Ubuntu\home\manuelortizus\personalProjects\frontend-developer\practice\type.png" alt="Type"></div>
+                    -->
+                </div>
+        <div alt="class">
+            <h3><li>Class</li></h3>
+            <pre class="pre"><code>.element{...}</code></pre>
+            <p>Example</p>
+            <pre class="pre"><code>title{
+        color: blueviolet;
+    }</code></pre>
+        </div>
+        
+            <h3><li>Id</li></h3>
+                <pre class="pre"><code>#element-id{...}</code></pre>
+                <p>Example</p>
+                <pre class="pre"><code>#title2{color: brown;}</code></pre>
+            <h3><li>Attribute</li></h3>
+                <pre class="pre"><code>a[href="..."]{...}</code></pre>
+                <p>Example</p>
+                <pre class="pre"><code>a[href="https://platzi.com/home"]{color: blue;}</code></pre>
+            <h3><li>Universal</li></h3>
+            <pre class="pre"><code>*{...}</code></pre>
+                <p>Example</p>
+            <pre class="pre"><code>*{background: papayawhip;}</code></pre>
+    </section>
+    <section alt="Combinators">
+            <h2>Combinators Selectors</h2>
+            <h3><li>Decendents</li></h3>
+            <code class="pre">dive p</code>
+            <p>Example</p>
+            <pre class="pre"><code>div p {
+            color: Lime;
+        }</code></pre>
+            <h3><li>Direct Son</li></h3>
+            <code class="pre">div > p</code>
+            <p>Example</p>
+            <pre class="pre"><code>div > div {
+                background: plum;
+            }</code></pre>
+            <h3><li>Adjacent element</li></h3>
+            <code class="pre">div + p</code>
+            <p>Example</p>
+            <pre class="pre"><code>div + section {
+                background: palevioletred;
+            }</code></pre>
+            <h3><li>Brothers General</li></h3>
+            <code class="pre">div ~ p</code>
+            <p>Example</p>
+            <pre class="pre"><code>div ~ p {
+                color: powderblue;
+            }</code></pre>
+    </section>
+    <h1>Pseudo-classes and Pseudo-elements Selectors</h1>
+    <section alt="Pseudo-classes">
+        <h3>Pseudo-classes</h3>
+        <pre class="pre"><code>:hover</code></pre>
+        <p>Example</p>
+        <pre class="pre"><code>p:hover {
+            color: tomato;
+        }</code></pre>
+    </section>
+    <section alt="Pseudo-elements">
+        <h3>Pseudo-elements</h3>
+        <pre class="pre"><code>::before</code></pre>
+        <p>Example</p>
+        <pre class="pre"><code>p::before {
+            content: "🚀";
+}</code></pre>
+        <h4>Pseudo-classes and Pseudo-elements combined</h4>
+        <pre class="pre"><code>p:hover::before, p:hover::after {
+        content: "🚀";
+}</code></pre>
+    </section>
+    <section alt="Waterfall and Specificity">
+        <h2>Waterfall and Specificity</h2>
+        <div>
+            <h3>Waterfall</h3>
+            <p>Example</p>
+            <pre class="pre">
+&lt;html&gt;
+    <code>&lt;style&gt;
+        h1&nbsp;{
+            color:&nbsp;red;
+        }
+        h1&nbsp;{
+	    color:&nbsp;blue;
+        }
+    &lt;/style&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Platzi&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<div>
+    <img src="\\wsl.localhost\Ubuntu\home\manuelortizus\personalProjects\frontend-developer\practice\selectors\platziblue.png" alt="platziblue">
+</div>
+<p>the Platzi color blue is printed because in CSS the cascade code that rewrite other is the most down of up if this is the same type, in this case I write a code that have the same type selector with the same chart blue</p>
+        </div>
+        <div>
+            <h3>Specificity</h3>
+            <p>Example</p>
+            <pre class="pre"><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        #platzi {
+            color: red;
+        }
+        .master {
+            color: SpringGreen;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;platzi&quot; class=&quot;master&quot;&gt;Platzi&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+<div>
+    <img src="\\wsl.localhost\Ubuntu\home\manuelortizus\personalProjects\frontend-developer\practice\selectors\platzired.png" alt="platzired">
+</div>
+<p>the selector id "#platzi" is most specifity than the selector class ".master"and for that reazon the color red is printed (here a <a href="https://specificity.keegan.st/">Specificity calculator</a> that help us to understand what style is most specificity than</p>
+    </section>
+</body>
+</html>

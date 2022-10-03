@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: salmon;
+        }
+        p::first-letter {
+            color: teal;
+        }
+        p::before {
+            content: "✨";
+        }
+        p:hover::before, p:hover::after {
+            content: "🚀";
+        }
+        p::after {
+            content: "💅";
+        }
+        p:hover {
+            color: skyblue;
+        }
+        div p:nth-child(2) {
+            color: violet;
+        }
+        ::placeholder {
+            color: tomato;
+        }
+        #fs-toggle:not(:fullscreen) {
+            background-color: #afa;
+        }
+        #fs-toggle:fullscreen {
+            background-color: #faa;
+        }
+        label, input[type='submit'] {
+            display: block;
+            margin-top: 1em;
+        }
+        *:read-write {
+            background-color: ivory;
+            border: 2px solid darkorange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello</p>
+    <div>
+        <p>Platzi</p>
+        <p>Master</p>
+        <p>The best</p>
+    </div>
+    <!---->
+    <input type="text" placeholder="name">
+    <!--
+        <div>
+            <button id="fs-toggle">Toggle Fullscreen</button>
+        </div>
+    -->
+    <p>Fill in your details</p>
+    <form action="">
+        <label for="email">Email Address</label>
+        <input name="email" type="email" value="test@example.com">
+        
+        <label for="note">Short note about yourself</label>
+        <textarea name="note">Don't be shy</textarea>
+
+        <label for="pic">Your picture</label>
+        <input name="pic" type="file" value="">
+
+        <input type="submit" value="Submit form">
+    </form>
+</body>
+</html>
